@@ -9,10 +9,6 @@
 int main(void)
 {
 	int n;
-
-	srand(time(0));
-
-	n = rand() - RAND_MAX / 2;
 /* your code goes there */
 	for (n = 48; n <= 57; n++)
 	{
