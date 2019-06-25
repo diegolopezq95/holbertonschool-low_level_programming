@@ -2,6 +2,7 @@
 
 /**
  * times_table - Entry point
+ *
  * Description: prints the 9 times table
  */
 void times_table(void)
