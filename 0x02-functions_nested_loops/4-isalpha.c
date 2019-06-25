@@ -2,6 +2,7 @@
 
 /**
  * _isalpha - Entry point
+ * @c: parameter to print
  * Description: checks for letter, lowercase, uppercase
  * Return: Always 0
  */

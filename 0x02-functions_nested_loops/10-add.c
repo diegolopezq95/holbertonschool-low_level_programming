@@ -2,11 +2,13 @@
 
 /**
  * add - Entry point
+ * @a: parameter to print
+ * @b: parameter to print
  * Description: adds two integers and returns the result
- * Return: Always 0
+ * Return: n + m
  */
-int add(int n, int m)
+int add(int a, int b)
 
 {
-	return (n + m);
+	return (a + b);
 }

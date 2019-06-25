@@ -2,6 +2,7 @@
 
 /**
  * print_sign - Entry point
+ * @n: parameter to print
  * Description: + if n greater than 0, 0 if n is 0, - if n is less than 0
  * Return: Always 0
  */

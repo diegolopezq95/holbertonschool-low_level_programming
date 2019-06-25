@@ -2,16 +2,17 @@
 
 /**
  * _islower - Entry point
+ * @c: parameter to print
  * Description: checks for lowercase character
- * Return: Always 0
+ * Return: 1 if c is lowercase 0 otherwise
  */
 int _islower(int c)
 
 {
-	if (c > 'a' && c < 'z')
+	if (c >= 'a' && c <= 'z')
 		return (1);
 	else
 		return (0);
 
-	putchar('\n');
+	_putchar('\n');
 }

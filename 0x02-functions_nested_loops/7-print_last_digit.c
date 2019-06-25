@@ -2,6 +2,7 @@
 
 /**
  * print_last_digit - Entry point
+ * @r: parameter to print
  * Description: print the last digit of a number
  * Return: Always 0
  */
