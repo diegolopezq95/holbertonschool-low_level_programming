@@ -10,20 +10,20 @@ int main(void)
 
 {
 	int n;
-	long int m = 1;
-	long int l = 2;
-	long int k;
+	int m = 1;
+	int l = 2;
+	int k;
 
 	if (m == 1 && l == 2)
 	{
-		printf("%ld, %ld", m, l);
+		printf("%d, %d", m, l);
 	}
-	for (n = 0; n <= 47; n++)
+	for (n = 0; n < 50; n++)
 	{
 		k = m + l;
 		m = l;
 		l = k;
-		printf(", %ld", k);
+		printf(", %d", k);
 	}
 	printf("\n");
 	return (0);
