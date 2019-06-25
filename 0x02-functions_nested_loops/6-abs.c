@@ -17,5 +17,5 @@ int _abs(int r)
 	{
 		return (-r);
 	}
-	putchar('\n');
+	_putchar('\n');
 }
