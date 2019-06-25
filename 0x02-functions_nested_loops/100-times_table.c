@@ -1,9 +1,8 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * print_times_times_table - prints the n times table, starting with 0.
- *
+ * print_times_times_table - Entry point
+ * Description: prints the n times table, starting with 0.
  * Return: Always 0
  */
 void print_times_table(int n)

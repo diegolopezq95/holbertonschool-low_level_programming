@@ -1,9 +1,8 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * jack_bauer - prints every minute of the day starting from 00:00 to 23:59
- *
+ * jack_bauer - Entry point
+ * Description: prints every minute of the day starting from 00:00 to 23:59
  * Return: Always 0
  */
 void jack_bauer(void)

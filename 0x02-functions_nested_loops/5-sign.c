@@ -1,9 +1,8 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * print_sign - + if n greater than 0, 0 if n is 0, - if n is less than 0
- *
+ * print_sign - Entry point
+ * Description: + if n greater than 0, 0 if n is 0, - if n is less than 0
  * Return: Always 0
  */
 int print_sign(int n)

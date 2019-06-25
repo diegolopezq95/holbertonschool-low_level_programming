@@ -1,9 +1,8 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * print_last_digit - print the last digit f a number
- *
+ * print_last_digit - Entry point
+ * Description: print the last digit of a number
  * Return: Always 0
  */
 int print_last_digit(int r)

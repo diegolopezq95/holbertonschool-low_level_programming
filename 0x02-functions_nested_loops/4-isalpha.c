@@ -1,9 +1,8 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * _isalpha - checks for letter, lowercase, uppercase
- *
+ * _isalpha - Entry point
+ * Description: checks for letter, lowercase, uppercase
  * Return: Always 0
  */
 int _isalpha(int c)
