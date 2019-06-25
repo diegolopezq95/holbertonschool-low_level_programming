@@ -10,21 +10,22 @@ int main(void)
 
 {
 	int n;
-	int m = 1;
-	int l = 2;
-	int k;
+	long int m = 1;
+	long int l = 2;
+	long int k;
+	long int j = 0;
 
-	if (m == 1 && l == 2)
-	{
-		printf("%d, %d", m, l);
-	}
-	for (n = 0; n < 50; n++)
+	for (n = 0; n <= 32; n++)
 	{
 		k = m + l;
 		m = l;
 		l = k;
-		printf(", %d", k);
+
+		if ((k % 2 == 0) || (k % 10 == 0))
+		{
+			j = j + k;
+		}
 	}
-	printf("\n");
+	printf("%ld\n", j);
 	return (0);
 }
