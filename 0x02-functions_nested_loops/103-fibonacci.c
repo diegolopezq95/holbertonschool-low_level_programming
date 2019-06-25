@@ -13,9 +13,9 @@ int main(void)
 	long int m = 1;
 	long int l = 2;
 	long int k;
-	long int j = 0;
+	long int sum = 2;
 
-	for (n = 0; n <= 32; n++)
+	for (n = 0; n <= 30; n++)
 	{
 		k = m + l;
 		m = l;
@@ -23,9 +23,9 @@ int main(void)
 
 		if ((k % 2 == 0) || (k % 10 == 0))
 		{
-			j = j + k;
+			sum = sum + k;
 		}
 	}
-	printf("%ld\n", j);
+	printf("%ld\n", sum);
 	return (0);
 }
