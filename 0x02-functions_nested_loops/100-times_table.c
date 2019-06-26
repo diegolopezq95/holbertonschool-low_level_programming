@@ -36,13 +36,13 @@ void print_times_table(int n)
 						_putchar(' ');
 					}
 					_putchar((k % 10) + '0');
-					if (l != n)
+					if (!(l == n))
 						_putchar(',');
 					continue;
 				}
 				_putchar(l + '0');
-				if (n != 0)
-					_putchar(',');
+				if (!(n == 0))
+					    _putchar(',');
 			}
 			_putchar('\n');
 		}
