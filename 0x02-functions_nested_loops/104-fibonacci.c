@@ -14,7 +14,7 @@ int main(void)
 	unsigned long int l = 2;
 	unsigned long int k;
 	unsigned long int sum = 0;
-	
+
 	if (m == 1 && l == 2)
 	{
 		printf("%ld, %ld", m, l);
