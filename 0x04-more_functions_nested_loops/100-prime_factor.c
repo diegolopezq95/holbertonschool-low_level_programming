@@ -18,6 +18,8 @@ int main(void)
 			n /= m;
 			m--;
 		}
+		m = 1;
+		break;
 	}
 	printf("%li\n", m);
 	return (0);
