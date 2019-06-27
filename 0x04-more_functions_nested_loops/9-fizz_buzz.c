@@ -7,7 +7,7 @@
 int main(void)
 {
 	int m;
-	
+
 	for (m = 1; m <= 100; m++)
 	{
 		if (m % 5 == 0 && m % 3 == 0)
@@ -37,4 +37,3 @@ int main(void)
 	}
 	return (0);
 }
-	
