@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	long int m, k = 1;
+	long int m;
 	long int n;
 
 	n = 612852475143;
@@ -19,7 +19,6 @@ int main(void)
 			m--;
 		}
 	}
-	m = k;
 	printf("%li\n", m);
 	return (0);
 }
