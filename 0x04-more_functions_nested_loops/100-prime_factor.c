@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int m;
+	long int m, k = 1;
 	long int n;
 
 	n = 612852475143;
@@ -16,12 +16,10 @@ int main(void)
 		if (n % m == 0)
 		{
 			n /= m;
-			for (; m <= n; m--)
-			{
-				printf("%d", m);
-			}
+			m--;
 		}
 	}
-	printf("\n");
+	m = k;
+	printf("%li\n", m);
 	return (0);
 }
