@@ -7,7 +7,7 @@
 int main(void)
 {
 	int m;
-
+	
 	for (m = 1; m <= 100; m++)
 	{
 		if (m % 5 == 0 && m % 3 == 0)
@@ -26,8 +26,15 @@ int main(void)
 		{
 			printf("%d", m);
 		}
-		printf(" ");
+		if (m != 100)
+		{
+			printf(" ");
+		}
+		else
+		{
+			printf("\n");
+		}
 	}
-	printf("\n");
 	return (0);
 }
+	
