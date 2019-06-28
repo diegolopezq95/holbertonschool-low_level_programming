@@ -7,8 +7,10 @@
 void print_number(int n)
 
 {
-	unsigned int m, digits, counter;
-	
+	unsigned int m;
+	unsigned int digits;
+	unsigned int counter = 1;
+
 	if (n < 0)
 	{
 		m = -n;
@@ -18,13 +20,12 @@ void print_number(int n)
 	{
 		m = n;
 	}
-	
+
 	digits = m;
-	counter = 1;
-	
+
 	while (digits > 9)
 	{
-	        digits = digits / 10;
+		digits = digits / 10;
 		counter = counter * 10;
 	}
 	for (digits = digits / 10; counter >= 1; counter = counter / 10)
