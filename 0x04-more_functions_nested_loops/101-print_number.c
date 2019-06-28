@@ -20,8 +20,9 @@ void print_number(int n)
 	}
 	
 	digits = m;
+	counter = 1;
 	
-	for (counter = 1; digits > 9;)
+	while (digits > 9)
 	{
 	        digits = digits / 10;
 		counter = counter * 10;
