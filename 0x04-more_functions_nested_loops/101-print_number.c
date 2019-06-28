@@ -7,18 +7,27 @@
 void print_number(int n)
 
 {
-	int m;
-
-	for (m = 0; m <= n;n++)
+	unsigned int m, digits, counter;
+	
+	if (n < 0)
 	{
-		if (m > 0)
-		{
-			_putchar(n);
-		}
-		else
-		{
-			n = m * -1;
-			_putchar(n);
-		}
+		m = -n;
+		_putchar('-');
+	}
+	else
+	{
+		m = n;
+	}
+	
+	digits = m;
+	
+	for (counter = 1; digits > 9;)
+	{
+	        digits = digits / 10;
+		counter = counter * 10;
+	}
+	for (digits = digits / 10; counter >= 1; counter = counter / 10)
+	{
+		_putchar(((m / counter) % 10) + '0');
 	}
 }
