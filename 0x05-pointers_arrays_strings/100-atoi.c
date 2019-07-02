@@ -7,8 +7,8 @@
  */
 int _atoi(char *s)
 {
-	int i = 0;
-	int c, j, k, sum = 0;
+	unsigned int i = 0;
+	unsigned int c, j, k, sum = 0;
 	int sig = 1;
 
 	while (s[i] != '\0')
