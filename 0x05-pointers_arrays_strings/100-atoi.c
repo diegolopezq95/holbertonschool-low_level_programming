@@ -2,12 +2,12 @@
 
 /**
  * _atoi - convert a string to an integer.
- * @s: string to print 
+ * @s: string to print
  * Return: Always 0.
  */
 int _atoi(char *s)
 {
-	int i = 0; 
+	int i = 0;
 	int c, j, k, sum = 0;
 	int sig = 1;
 
@@ -25,7 +25,7 @@ int _atoi(char *s)
 		if (s[j] == '-')
 			sig = sig * -1;
 	}
-	for (k = c; k < i; k++) 
+	for (k = c; k < i; k++)
 	{
 		if (!(s[k] >= '0' && s[k] <= '9'))
 			break;
