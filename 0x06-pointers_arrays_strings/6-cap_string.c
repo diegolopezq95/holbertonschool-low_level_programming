@@ -11,7 +11,7 @@ char *cap_string(char *s)
 
 	while (s[count] != '\0')
 	{
-		if (s[0] >='a' && s[0] <= 'z')
+		if (s[0] >= 'a' && s[0] <= 'z')
 		{
 			s[0] = (s[0] - 32);
 		}
@@ -20,17 +20,17 @@ char *cap_string(char *s)
 			s[count] = (s[count] - 32);
 		}
 		if (s[count - 1] == '.' && s[count] >= 'a' && s[count] <= 'z')
-                {
-                        s[count] = (s[count] - 32);
-                }
+		{
+			s[count] = (s[count] - 32);
+		}
 		if (s[count - 1] == '\t' && s[count] >= 'a' && s[count] <= 'z')
-                {
-                        s[count] = (s[count] - 32);
-                }
+		{
+			s[count] = (s[count] - 32);
+		}
 		if (s[count - 1] == '\n' && s[count] >= 'a' && s[count] <= 'z')
-                {
-                        s[count] = (s[count] - 32);
-                }
+		{
+			s[count] = (s[count] - 32);
+		}
 		count++;
 	}
 	return (s);
