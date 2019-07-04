@@ -2,7 +2,7 @@
 
 /**
  * print_buffer - function that prints a buffer.
- * @b: 
+ * @b: pointer string
  * @size: bytes of the buffer pointed by b
  * Return: Always 0.
  */
