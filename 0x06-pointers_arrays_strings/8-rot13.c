@@ -21,6 +21,7 @@ char *rot13(char *s)
 			if (s[count] == alf[length])
 			{
 				s[count] = rot[length];
+				break;
 			}
 			
 			length++;
