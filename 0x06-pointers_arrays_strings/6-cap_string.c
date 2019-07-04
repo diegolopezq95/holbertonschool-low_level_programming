@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * *cap_string - changes all lowercase letters of a string to uppercase.
+ * *cap_string - function that capitalizes all words of a string.
  * @s: array of integer
  * Return: Always 0.
  */
