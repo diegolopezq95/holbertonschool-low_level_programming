@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * *_strpbrk - searches a string for any of a set of bytes.
+ * _strstr - locates a substring.
  * @needle: sub string
  * @haystack: string
  * Return: 0.
@@ -25,4 +25,4 @@ char *_strstr(char *haystack, char *needle)
 		haystack++;
 	}
 	return (0);
-} 
+}
