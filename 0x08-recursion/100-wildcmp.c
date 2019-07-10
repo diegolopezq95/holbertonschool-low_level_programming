@@ -17,7 +17,7 @@ bool wildcmp_function(char *s1, char *s2)
 	{
 		return (wildcmp_function(s1 + 1, s2 + 1));
 	}
-	if (*s2 == '*')
+	if (*s2 == '*' || *s1 == '*')
 	{
 		return (wildcmp_function(s1, s2 + 1) || wildcmp_function(s1 + 1, s2));
 	}
