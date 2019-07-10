@@ -1,4 +1,4 @@
-ls #include "holberton.h"
+#include "holberton.h"
 
 /**
  * _is_prime_function - calculates the prime number.
