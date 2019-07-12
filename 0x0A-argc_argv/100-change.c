@@ -19,9 +19,9 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (0);
 	}
-	
+
 	i = atoi(argv[1]);
-	
+
 	if (i < 0)
 	{
 		printf("0\n");
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	for (; i >= 25; cents++)
 	{
 		i -= 25;
-       	}
+	}
 	for (; i >= 10; cents++)
 	{
 		i -= 10;
@@ -44,9 +44,9 @@ int main(int argc, char *argv[])
 		i -= 2;
 	}
 	for (; i >= 1; cents++)
-        {
+	{
 		i -= 1;
-        }
+	}
 	printf("%d\n", cents);
 	return (0);
 }
