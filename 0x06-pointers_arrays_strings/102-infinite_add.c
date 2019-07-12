@@ -46,7 +46,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		length--;
 	}
 	if (r[0] == '0')
-		return (r + 1);
+		return (r + 0);
 	else
 		return (r);
 }
