@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <ctype.h>
 
 /**
  * main - adds positive numbers.
