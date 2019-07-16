@@ -12,7 +12,7 @@ char *str_concat(char *s1, char *s2)
 {
 	int i = 0, x, y, k;
 	char *a;
-
+	
 	for (x = 0; s1[x] != '\0'; x++)
 	{
 		;
@@ -22,9 +22,13 @@ char *str_concat(char *s1, char *s2)
 		;
 	}
 	k = x + y + 1;
-	if (s2 == 0 || s1 == 0)
+	if (s2 == 0)
 	{
-		return (NULL);
+                return ("");
+        }
+	if (s1 == 0)
+	{
+		return ("");
 	}
 	a = malloc(k);
 	if (a == 0)
