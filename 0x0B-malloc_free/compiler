@@ -1,0 +1,18 @@
+# 0x0B. C - malloc, free
+
+0- gcc -Wall -pedantic -Werror -Wextra 0-main.c 0-create_array.c -o a
+./a 
+
+1- gcc -Wall -pedantic -Werror -Wextra 1-main.c 1-strdup.c -o s
+./s
+
+2- gcc -Wall -pedantic -Werror -Wextra 2-main.c 2-str_concat.c -o c
+./c
+
+3- gcc -Wall -pedantic -Werror -Wextra 3-main.c 3-alloc_grid.c -o g
+./g
+
+4- gcc -Wall -pedantic -Werror -Wextra 4-main.c 3-alloc_grid.c 4-free_grid.c -o f
+valgrind ./f
+
+
