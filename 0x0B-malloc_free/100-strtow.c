@@ -44,5 +44,5 @@ char **strtow(char *str)
 			a[m] = '\0';
 			m++;
 	}
-	return (m);
+	return (0);
 }
