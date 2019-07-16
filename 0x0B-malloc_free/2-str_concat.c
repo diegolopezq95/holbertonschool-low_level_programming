@@ -22,7 +22,7 @@ char *str_concat(char *s1, char *s2)
 		;
 	}
 	k = x + y + 1;
-	if (s2 == 0)
+	if (s2 == 0 || s1 == 0)
 	{
 		return (NULL);
 	}
