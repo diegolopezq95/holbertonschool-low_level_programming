@@ -21,16 +21,16 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = "";
 	}
-	for (x = 0; s1[x] != '\0'; x++)
+	for (x = 0; s1[x] != '\0'; k++, x++)
 	{
 		;
 	}
-	for (y = 0; s2[y] != '\0'; y++)
+	for (y = 0; s2[y] != '\0'; k++, y++)
 	{
 		;
 	}
-	k = x + y + 1;
-	a = malloc(k);
+	/*k = x + y;*/
+	a = malloc(k + 1);
 	if (a == 0)
 	{
 		return (NULL);
