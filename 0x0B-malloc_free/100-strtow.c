@@ -37,10 +37,10 @@ char **strtow(char *str)
 		free(a);
 		return (NULL);
 	}
-	for (length = 0; str[length] != '\0'; length++)
+	/*for (i = 0; str[i] != '\0'; i++)*/
 	{
-			if (str[length] != ' ')
-				a[m] = str[length];
+			if (str[i] == ' ')
+				a[m] = str[i];
 			a[m] = '\0';
 			m++;
 	}
