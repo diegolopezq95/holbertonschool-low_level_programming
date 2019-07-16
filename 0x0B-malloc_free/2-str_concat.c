@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * *str_concat - concatenates two strings.
@@ -11,25 +10,29 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int str1, str2, str3;
-	int i = 0;
+	int i, j, k;
 	char *a;
 
-	str1 = strlen(s1);
-	str2 = strlen(s2);
-	str3 = str1 + str2 + 1;
-
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		;
+	}
+	for (j = 0; s2[j] != '\0'; j++)
+	{
+		;
+	}
+	k = i + j;
 	if (s2 == 0)
 	{
 		return (NULL);
 	}
-	a = malloc(str3);
-	for (; *s1 != '\0'; i++)
+	a = malloc(k + 1 * sizeof(char));
+	for (i = 0; *s1 != '\0'; i++)
 	{
 		a[i] = *s1;
 		s1++;
 	}
-	for (; *s2 != '\0'; i++)
+	for (j = 0; *s2 != '\0'; i++)
 	{
 		a[i] = *s2;
 		s2++;
