@@ -65,7 +65,7 @@ char **strtow(char *str)
 	}
 	countwords = _words(str);
 	a = (char **) malloc((countwords + 1) * sizeof(char *));
-	if (a == 0 || countwords == 0)
+	if (a == 0/* || countwords == 0*/)
 	{
 		free(a);
 		return (NULL);
@@ -80,12 +80,12 @@ char **strtow(char *str)
 			a[i] = (char *) malloc((countchars + 1) * sizeof(char));
 			if (a[i] == 0)
 			{
-				for (j = 0; j < i; j++)
+				for (j = 0; j <= i; j++)
 					free(a[j]);
 				free(a);
 				return (NULL);
 			}
-			for (j = 0; j < countchars; j++, str++)
+			for (j = 0; j < countchars; j++, chars++)
 			{
 				a[i][j] = str[chars];
 			}
@@ -93,6 +93,6 @@ char **strtow(char *str)
 			i++;
 		}
 	}
-	a[i] = 0;
+	a[countwords] = 0;
 	return (a);
 }
