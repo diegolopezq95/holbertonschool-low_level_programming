@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * chars - count characters
+ * _characters - count characters
  * @str: pointer string.
  * Return:.
  */
@@ -23,13 +23,13 @@ int _characters(char *str)
 }
 
 /**
- * words - count words
+ * _words - count words
  * @str: pointer string.
  * Return:.
  */
 int _words(char *str)
 {
-	int words = 0;
+	int chars = 0, words = 0;
 
 	while (str[chars] != '\0')
 	{
@@ -54,19 +54,18 @@ int _words(char *str)
  * @str: pointer string.
  * Return:.
  */
-
 char **strtow(char *str)
 {
 	char **a;
-	int countchars, countwords, i = 0 ,j;
+	int countchars, countwords, chars = 0, i = 0, j;
 
-	if (*str == 0 || str == "")
+	if (*str == '\0' || str == 0)
 	{
 		return (NULL);
 	}
 	countwords = _words(str);
 	a = (char **) malloc((countwords + 1) * sizeof(char *));
-	if (a == 0 || numwords == 0 || words == 0)
+	if (a == 0 || countwords == 0)
 	{
 		free(a);
 		return (NULL);
@@ -74,33 +73,26 @@ char **strtow(char *str)
 	while (str[chars] != '\0')
 	{
 		if (str[chars] == ' ')
-		{
 			chars++;
-		}
 		else
 		{
-			countchars = _characters(str);
+			countchars = _characters(str + chars);
 			a[i] = (char *) malloc((countchars + 1) * sizeof(char));
 			if (a[i] == 0)
 			{
 				for (j = 0; j < i; j++)
-				{
 					free(a[j]);
-				}
 				free(a);
 				return (NULL);
 			}
-			for (i = 0; i < countchars; i++)
+			for (j = 0; j < countchars; j++, str++)
 			{
-				for (j = 0; a[i][j] != '\0'; j++; chars++)
-				{
-					a[i][j] = str[chars];
-					a[i][j] = '\0';
-					i++;
-				}
-				
+				a[i][j] = str[chars];
 			}
+			a[i][j] = '\0';
+			i++;
 		}
 	}
-	return (a)
+	a[i] = 0;
+	return (a);
 }
