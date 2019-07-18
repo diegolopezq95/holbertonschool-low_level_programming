@@ -8,9 +8,9 @@
  * @argv: argument vector.
  * Return: .
  */
-int main(long long int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	long long int num1, num2, mul;
+	int num1, num2, mul;
 	
 	mul = 1;
 	if (argc < 2)
