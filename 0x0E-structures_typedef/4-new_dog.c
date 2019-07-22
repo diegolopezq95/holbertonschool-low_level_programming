@@ -23,14 +23,14 @@ dog_t *new_dog(char *name, float age, char *owner)
 	a = malloc(sizeof(struct dog));
 	if (a == 0)
 	{
-		free(a);
+		/*free(a);*/
 		return (NULL);
 	}
 	a->name = malloc((length + 1) * sizeof(char));
 	if (a->name == 0)
 	{
+		/*free(a->name);*/
 		free(a);
-		free(a->name);
 		return (NULL);
 	}
 	for (i = 0; i < length; i++)
@@ -39,9 +39,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 	a->owner = malloc((length2 + 1) * sizeof(char));
 	if (a->owner == 0)
 	{
-		free(a);
 		free(a->name);
-		free(a->owner);
+		/*free(a->owner);*/
+		free(a);
 		return (NULL);
 	}
 	for (i = 0; i < length2; i++)
