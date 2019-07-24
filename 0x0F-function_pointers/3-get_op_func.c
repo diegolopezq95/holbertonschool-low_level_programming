@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * get_op_function - selects the correct function to perform the operation.
+ * get_op_func - selects the correct function to perform the operation.
  * @s: pointer to a function
  * Return:.
  */
@@ -27,12 +27,7 @@ int (*get_op_func(char *s))(int, int)
 		{
 			return (*ops[i].f);
 		}
-		else
-		{
-			return (NULL);
-		}
 		i++;
 	}
-	printf("Error\n");
-	exit(99);
+	return (NULL);
 }
