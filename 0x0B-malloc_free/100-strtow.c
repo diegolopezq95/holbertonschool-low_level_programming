@@ -35,14 +35,14 @@ int _words(char *str)
 	{
 		if (str[chars] == ' ')
 		{
-			if (str[chars + 1] == ' ' || str[chars + 1] == '\0')
-			{
-				words++;
-			}
 			chars++;
 		}
 		else
 		{
+			if (str[chars + 1] == ' ' || str[chars + 1] == '\0')
+			{
+				words++;
+			}
 			chars++;
 		}
 	}
