@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 	char a;
 
 	a = argv[2][0];
-	if (argc < 3 || argc > 4)
+	if (argc <= 3 || argc > 4)
 	{
 		printf("Error\n");
 		exit(98);
