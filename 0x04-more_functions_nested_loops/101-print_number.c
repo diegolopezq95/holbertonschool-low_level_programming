@@ -13,8 +13,8 @@ void print_number(int n)
 
 	if (n < 0)
 	{
-		m = -n;
 		_putchar('-');
+		m = -n;
 	}
 	else
 	{
@@ -28,7 +28,7 @@ void print_number(int n)
 		digits = digits / 10;
 		counter = counter * 10;
 	}
-	for (digits = digits / 10; counter >= 1; counter = counter / 10)
+	for (; counter >= 1; counter = counter / 10)
 	{
 		_putchar(((m / counter) % 10) + '0');
 	}
