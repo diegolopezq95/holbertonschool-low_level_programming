@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 
 	while (format[i])
 	{
-		switch (format[i++])
+	        switch (format[i++])
 		{
 		case 'c':
 			printf("%c", va_arg(Argumentlist, int));
@@ -33,15 +33,14 @@ void print_all(const char * const format, ...)
 			str = va_arg(Argumentlist, char *);
 			if (str == NULL)
 			{
-				printf("nil");
-				break;
+				str = "(nil)";
 			}
 			printf("%s", str);
 			break;
 		default:
 			continue;
 		}
-		if (format[i])
+		if (format[i] != '\0')
 		{
 			printf(", ");
 		}
