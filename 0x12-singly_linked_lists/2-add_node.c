@@ -17,7 +17,7 @@ int _strlen(const char *s)
 }
 
 /**
- * add_note - function that adds a new node at the beginning of a list_t list.
+ * add_node - function that adds a new node at the beginning of a list_t list.
  * @head: First node
  * @str: pointer to string
  * Return: number of nodes.
