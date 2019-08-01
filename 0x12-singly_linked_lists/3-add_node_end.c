@@ -17,9 +17,9 @@ int _strlen(const char *s)
 }
 
 /**
- * add_note - function that adds a new node at the end of a list_t list.
+ * add_node_end - function that adds a new node at the end of a list_t list.
  * @head: first node
- * @stR: string to print
+ * @str: string to print
  * Return: number of nodes.
  */
 list_t *add_node_end(list_t **head, const char *str)
@@ -27,17 +27,13 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *temp;
 	list_t *temprev;
 
-	if (head == NULL)
-	{
-		return (NULL);
-	}
 	temp = malloc(sizeof(list_t));
 	if (temp == NULL)
 	{
 		return (NULL);
 	}
 	temp->str = strdup(str);
-        temp->len = _strlen(str);
+	temp->len = _strlen(str);
 	if (*head == NULL)
 	{
 		temp->next = *head;
@@ -53,5 +49,5 @@ list_t *add_node_end(list_t **head, const char *str)
 		temp->next = temprev->next;
 		temprev->next = temp;
 	}
-        return (*head);
+	return (*head);
 }
