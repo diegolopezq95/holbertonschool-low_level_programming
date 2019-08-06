@@ -14,11 +14,10 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (head == NULL)
 		return (NULL);
 	tempinsert = malloc(sizeof(listint_t));
-
-	tempinsert->n = n;
 	if (!tempinsert)
 		return (NULL);
-	if (*head == NULL)
+	tempinsert->n = n;
+	if (idx == 0 && *head == NULL)
 	{
 		*head = tempinsert;
 		return (NULL);
