@@ -16,9 +16,14 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (0);
 	}
 	tempinsert = malloc(sizeof(listint_t));
-	if (idx == 0 || tempinsert == NULL)
+	if (tempinsert == NULL)
 	{
 		return (NULL);
+	}
+	if (idx == 0)
+	{
+		tempinsert->next = *head;
+		*head = tempinsert;
 	}
 	else
 	{
