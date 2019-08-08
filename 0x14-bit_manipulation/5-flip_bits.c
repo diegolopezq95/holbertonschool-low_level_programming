@@ -11,14 +11,14 @@ unsigned int flip_bits_count(unsigned long int n)
 {
 	unsigned int count, mask = 1;
 
-	count = 0; 
+	count = 0;
 	while (n)
-	{ 
-		count += n & mask; 
-		n >>= mask; 
+	{
+		count += n & mask;
+		n = n >> mask;
 	}
 	return (count);
-} 
+}
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
 	return flip_bits_count(n ^ m);
