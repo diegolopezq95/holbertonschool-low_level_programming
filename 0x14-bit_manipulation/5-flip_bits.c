@@ -1,10 +1,9 @@
 #include "holberton.h"
 
 /**
- * flip_bits - returns the number of bits need to flip.
+ * flip_bits_count - count bits
  * @n: decimal number
- * @index: index
- * Return: converted binary
+ * Return: count
  */
 
 unsigned int flip_bits_count(unsigned long int n)
@@ -19,7 +18,15 @@ unsigned int flip_bits_count(unsigned long int n)
 	}
 	return (count);
 }
+
+/**
+ * flip_bits - returns the number of bits need to flip.
+ * @n: decimal number
+ * @m: decimal number to compare
+ * Return: converted binary
+ */
+
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	return flip_bits_count(n ^ m);
+	return (flip_bits_count(n ^ m));
 }
