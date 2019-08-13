@@ -26,9 +26,12 @@ int create_file(const char *filename, char *text_content)
 	{
 		length++;
 	}
+
 	w = write(fd, text_content, length);
+
 	if (w == -1)
 		return (-1);
+
 	close(fd);
 	return (1);
 }
