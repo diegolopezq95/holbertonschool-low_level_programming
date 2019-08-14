@@ -48,11 +48,6 @@ int cp_file(char *filename, char *newfilename)
 	int fd, fd_new, r, w;
 	char buf[SIZE];
 
-	if (filename == NULL || buf == NULL)
-		cant_read(filename);
-	if (newfilename == NULL || buf == NULL)
-		cant_cr_or_wr(newfilename);
-
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
