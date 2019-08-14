@@ -63,15 +63,15 @@ int cp_file(char *filename, char *newfilename)
 	if (r == -1)
 		cant_read(filename);
 
-	/*while (r)
-	  {*/
-	w = write(fd_new, buf, r);
-	if (w == -1)
-		cant_write(newfilename);
-	/*r = read(fd, buf, SIZE);
-	if (r == -1)
-		cant_read(filename);
-		}*/
+	while (r)
+	{
+		w = write(fd_new, buf, r);
+		if (w == -1)
+			cant_write(newfilename);
+		r = read(fd, buf, SIZE);
+		if (r == -1)
+			cant_read(filename);
+	}
 	if (close(fd) == -1)
 		cant_close(fd);
 	if (close(fd_new) == -1)
