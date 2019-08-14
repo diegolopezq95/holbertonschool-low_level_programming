@@ -2,7 +2,7 @@
 
 /**
  * cant_read - prints error.
- * @filename: name of the file to be read.
+ * @file: name of the file to be read.
  * Return: .
  */
 
@@ -14,33 +14,33 @@ void cant_read(char *file)
 
 /**
  * cant_write - prints error.
- * @filename: name of the file to be read.
+ * @file: name of the file to be write.
  * Return: .
  */
 
 void cant_write(char *file)
 {
-        dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
-        exit(99);
+	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
+	exit(99);
 }
 
 /**
  * cant_close - prints error.
- * @filename: name of the file to be read.
+ * @fd: value to print.
  * Return: .
  */
 
 void cant_close(int fd)
 {
-        dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
-        exit(100);
+	dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd);
+	exit(100);
 }
 
 /**
- * append_text_to_file - appends text at the end of a file.
- * @filename: name of the file to be read.
- * @text_content: a NULL terminated string to add at the end
- * Return: 1 on success, -1 on failure.
+ * cp_file - appends text at the end of a file.
+ * @filename: name of the source file.
+ * @newfilename: name of the destination file
+ * Return: 0.
  */
 
 int cp_file(char *filename, char *newfilename)
@@ -93,6 +93,7 @@ int cp_file(char *filename, char *newfilename)
 int main(int argc, char *argv[])
 {
 	char *filename, *newfilename;
+
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
