@@ -51,7 +51,7 @@ int cp_file(char *filename, char *newfilename)
 	fd = open(filename, O_RDONLY);
 
 	if (fd == -1)
-		 cant_read(filename);
+		cant_read(filename);
 
 	fd_new = open(newfilename, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
