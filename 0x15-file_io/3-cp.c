@@ -13,12 +13,12 @@ void cant_read(char *file)
 }
 
 /**
- * cant_cr_or_wr - prints error.
+ * cant_write - prints error.
  * @filename: name of the file to be read.
  * Return: .
  */
 
-void cant_cr_or_wr(char *file)
+void cant_write(char *file)
 {
         dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
         exit(99);
@@ -61,7 +61,7 @@ int cp_file(char *filename, char *newfilename)
 	fd_new = open(newfilename, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	if (fd_new == -1)
-		cant_cr_or_wr(newfilename);
+		cant_write(newfilename);
 
 	r = read(fd, buf, SIZE);
 
@@ -72,7 +72,7 @@ int cp_file(char *filename, char *newfilename)
 	{
 		w = write(fd_new, buf, r);
 		if (w == -1)
-			cant_cr_or_wr(newfilename);
+			cant_write(newfilename);
 		r = read(fd, buf, SIZE);
 		if (r == -1)
 			cant_read(filename);
