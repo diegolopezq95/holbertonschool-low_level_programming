@@ -17,12 +17,18 @@ int lomuto_part(int *array, int lo, int hi, size_t size)
 		if (array[lo] < array[hi])
 		{
 			i = i + 1;
-			swap(&array[lo], &array[i]);
-			print_array((const int *)array, size);
+			if (i != lo)
+			{
+				swap(&array[lo], &array[i]);
+				print_array((const int *)array, size);
+			}
 		}
 	}
-	swap(&array[i + 1], &array[hi]);
-	print_array((const int *)array, size);
+	if (array[i + 1] > array[hi])
+	{
+		swap(&array[i + 1], &array[hi]);
+		print_array((const int *)array, size);
+	}
         return (i + 1);
 }
 
