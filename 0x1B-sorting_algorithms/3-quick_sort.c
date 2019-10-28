@@ -12,7 +12,7 @@ int lomuto_part(int *array, int lo, int hi, size_t size)
 {
 	int i;
 
-        for (i = lo - 1, lo; lo <= hi - 1; lo++)
+	for (i = lo - 1, lo; lo <= hi - 1; lo++)
 	{
 		if (array[lo] < array[hi])
 		{
@@ -29,7 +29,7 @@ int lomuto_part(int *array, int lo, int hi, size_t size)
 		swap(&array[i + 1], &array[hi]);
 		print_array((const int *)array, size);
 	}
-        return (i + 1);
+	return (i + 1);
 }
 
 /**
@@ -43,10 +43,11 @@ int lomuto_part(int *array, int lo, int hi, size_t size)
 void quick_sort_easy(int *array, int lo, int hi, size_t size)
 {
 	int pi;
+
 	if (lo < hi)
 	{
 		pi = lomuto_part(array, lo, hi, size);
-	        quick_sort_easy(array, lo, pi - 1, size);
+		quick_sort_easy(array, lo, pi - 1, size);
 		quick_sort_easy(array, pi + 1, hi, size);
 	}
 }
