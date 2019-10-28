@@ -34,4 +34,13 @@ int lomuto_part(int *array, int lo, int hi, size_t size);
 void quick_sort_easy(int *array, int lo, int hi, size_t size);
 void quick_sort(int *array, size_t size);
 
+void shell_sort(int *array, size_t size);
+
+void cocktail_sort_list(listint_t **list);
+void swap_left_to_right(listint_t **list, listint_t *tmp);
+void swap_right_to_left(listint_t **list, listint_t *tmp);
+
+void merge(int *array, int *left, int *right, size_t size);
+void merge_sort(int *array, size_t size);
+
 #endif
