@@ -1,38 +1,13 @@
 #include "sort.h"
 
 /**
- * heap_sort - heap sort algorithm
+ * sift_down - subroutine for implementing heapify
  * @array: array of integers
  * @size: size of the array
+ * @start: first element
+ * @end: last element
  * Return: Nothing.
  */
-void heap_sort(int *array, size_t size)
-{
-	int end;
-
-	heapify(array, size);
-	end = size - 1;
-	while (end > 0)
-	{
-		swap(&array[end], &array[0]);
-		print_array(array, size);
-		end = end - 1;
-		sift_down(array, 0, end, size);
-	}
-}
-
-void heapify(int *array, size_t size)
-{
-	int start;
-
-	start = (size - 2) / 2;
-	while (start >= 0)
-	{
-		sift_down(array, start, size - 1, size);
-		start = start - 1;
-	}
-}
-
 void sift_down(int *array, int start, int end, size_t size)
 {
 	int root, child;
@@ -54,6 +29,44 @@ void sift_down(int *array, int start, int end, size_t size)
 	}
 }
 
+/**
+ * heapify - building a heap from the bottom up
+ * @array: array of integers
+ * @size: size of the array
+ * Return: Nothing.
+ */
+void heapify(int *array, size_t size)
+{
+	int start;
+
+	start = (size - 2) / 2;
+	while (start >= 0)
+	{
+		sift_down(array, start, size - 1, size);
+		start = start - 1;
+	}
+}
+
+/**
+ * heap_sort - heap sort algorithm
+ * @array: array of integers
+ * @size: size of the array
+ * Return: Nothing.
+ */
+void heap_sort(int *array, size_t size)
+{
+	int end;
+
+	heapify(array, size);
+	end = size - 1;
+	while (end > 0)
+	{
+		swap(&array[end], &array[0]);
+		print_array(array, size);
+		end = end - 1;
+		sift_down(array, 0, end, size);
+	}
+}
 /**
  * swap - swap function.
  * @a: pointer to array in position a
