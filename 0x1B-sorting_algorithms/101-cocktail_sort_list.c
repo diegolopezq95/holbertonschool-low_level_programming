@@ -10,24 +10,27 @@ void swap_left_to_right(listint_t **list, listint_t *tmp)
 {
 	listint_t *aux;
 
-	aux = tmp->next;
-	if (aux->next != NULL)
+	if (list)
 	{
-		aux->next->prev = tmp;
+		aux = tmp->next;
+		if (aux->next != NULL)
+		{
+			aux->next->prev = tmp;
+		}
+		tmp->next = aux->next;
+		aux->prev = tmp->prev;
+		aux->next = tmp;
+		tmp->prev = aux;
+		if (aux->prev != NULL)
+		{
+			aux->prev->next = aux;
+		}
+		else
+		{
+			*list = aux;
+		}
+		print_list(*list);
 	}
-	tmp->next = aux->next;
-	aux->prev = tmp->prev;
-	aux->next = tmp;
-	tmp->prev = aux;
-	if (aux->prev != NULL)
-	{
-		aux->prev->next = aux;
-	}
-	else
-	{
-		*list = aux;
-	}
-	print_list(*list);
 }
 /**
  * swap_right_to_left - Swap from right to left
@@ -37,23 +40,26 @@ void swap_left_to_right(listint_t **list, listint_t *tmp)
  */
 void swap_right_to_left(listint_t **list, listint_t *tmp)
 {
-	if (tmp->next != NULL)
+	if (list)
 	{
-		tmp->next->prev = tmp->prev;
+		if (tmp->next != NULL)
+		{
+			tmp->next->prev = tmp->prev;
+		}
+		tmp->prev->next = tmp->next;
+		tmp->next = tmp->prev;
+		tmp->prev = tmp->prev->prev;
+		tmp->next->prev = tmp;
+		if (tmp->prev != NULL)
+		{
+			tmp->prev->next = tmp;
+		}
+		else
+		{
+			*list = tmp;
+		}
+		print_list(*list);
 	}
-	tmp->prev->next = tmp->next;
-	tmp->next = tmp->prev;
-	tmp->prev = tmp->prev->prev;
-	tmp->next->prev = tmp;
-	if (tmp->prev != NULL)
-	{
-		tmp->prev->next = tmp;
-	}
-	else
-	{
-		*list = tmp;
-	}
-	print_list(*list);
 }
 
 /**
