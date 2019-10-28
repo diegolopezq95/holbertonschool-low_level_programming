@@ -71,35 +71,37 @@ void cocktail_sort_list(listint_t **list)
 {
 	listint_t *tmp;
 	int flag;
-
-	tmp = *list;
-	flag = 1;
-	do {
-		flag = 0;
-		while (tmp->next != NULL)
-		{
-			if (tmp->n > tmp->next->n)
+	if (list)
+	{
+		tmp = *list;
+		flag = 1;
+		do {
+			flag = 0;
+			while (tmp->next != NULL)
 			{
-				swap_left_to_right(list, tmp);
-				flag = 1;
+				if (tmp->n > tmp->next->n)
+				{
+					swap_left_to_right(list, tmp);
+					flag = 1;
+				}
+				else
+					tmp = tmp->next;
 			}
-			else
-				tmp = tmp->next;
-		}
-		if (flag == 0)
-		{
-			break;
-		}
-		flag = 0;
-		while (tmp->prev != NULL)
-		{
-			if (tmp->prev->n > tmp->n)
+			if (flag == 0)
 			{
-				swap_right_to_left(list, tmp);
-				flag = 1;
+				break;
 			}
-			else
-				tmp = tmp->prev;
-		}
-	} while (flag == 1);
+			flag = 0;
+			while (tmp->prev != NULL)
+			{
+				if (tmp->prev->n > tmp->n)
+				{
+					swap_right_to_left(list, tmp);
+					flag = 1;
+				}
+				else
+					tmp = tmp->prev;
+			}
+		} while (flag == 1);
+	}
 }
