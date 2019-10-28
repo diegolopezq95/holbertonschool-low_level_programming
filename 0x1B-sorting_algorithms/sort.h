@@ -47,4 +47,9 @@ int hoare_part(int *array, int lo, int hi, size_t size);
 void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
+void heap_sort(int *array, size_t size);
+void heapify(int *array, size_t size);
+void sift_down(int *array, int start, int end, size_t size);
+
+
 #endif
