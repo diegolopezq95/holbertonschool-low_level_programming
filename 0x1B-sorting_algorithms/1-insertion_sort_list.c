@@ -2,7 +2,7 @@
 
 /**
  * insertion_sort_list - Insert sort algorithm
- * @list: Size of the array
+ * @list: pointer to list
  * Return: Nothing.
  */
 void insertion_sort_list(listint_t **list)
