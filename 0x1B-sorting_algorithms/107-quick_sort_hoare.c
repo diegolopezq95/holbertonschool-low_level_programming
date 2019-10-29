@@ -14,7 +14,7 @@ int hoare_part(int *array, int lo, int hi, size_t size)
 
 	i = lo - 1;
 	j = hi + 1;
-	pivot = array[lo];
+	pivot = array[hi];
 	while (1)
 	{
 		do {
@@ -23,12 +23,15 @@ int hoare_part(int *array, int lo, int hi, size_t size)
 		do {
 			j = j - 1;
 		} while (array[j] > pivot);
-		if (i >= j)
+		if (i > j)
 		{
 			return (j);
 		}
 		swap(&array[i], &array[j]);
-		print_array(array, size);
+		if (array[i] != array[j])
+		{
+			print_array(array, size);
+		}
 	}
 }
 
@@ -45,11 +48,12 @@ void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size)
 {
 	int pi;
 
-	if (lo >= hi)
-		return;
-	pi = hoare_part(array, lo, hi, size);
-	quick_sort_easy_hoare(array, lo, pi, size);
-	quick_sort_easy_hoare(array, pi + 1, hi, size);
+	if (lo < hi)
+	{
+		pi = hoare_part(array, lo, hi, size);
+		quick_sort_easy_hoare(array, lo, pi, size);
+		quick_sort_easy_hoare(array, pi + 1, hi, size);
+	}
 }
 
 /**
