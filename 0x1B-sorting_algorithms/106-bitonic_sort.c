@@ -1,14 +1,15 @@
 #include "sort.h"
 
 /**
- * hoare_part - hoare partition algorithm.
+ * check_swap - swap if ascending or descending
  * @array: array of integers
  * @size: size of the array
- * @hi: last value
- * @lo: first value
- * Return: integer.
+ * @i: index position i
+ * @j: index position i + k
+ * @dir: direction = 1 if ascending, 0 if descending
+ * Return: Nothing.
  */
-void compAndSwap(int *array, int i, int j, int dir, size_t size) 
+void check_swap(int *array, int i, int j, int dir, size_t size)
 {
 	(void)size;
 
@@ -17,20 +18,29 @@ void compAndSwap(int *array, int i, int j, int dir, size_t size)
 		swap(&array[i], &array[j]);
 	}
 }
-void bitonicMerge(int *array, int low, int num, int dir, size_t size) 
+/**
+ * bitonic_merge - hoare partition algorithm.
+ * @array: array of integers
+ * @size: size of the array
+ * @lo: index position lo
+ * @num: num of elements to be sorted
+ * @dir: direction = 1 if ascending, 0 if descending
+ * Return: Nothing.
+ */
+void bitonic_merge(int *array, int lo, int num, int dir, size_t size)
 {
 	int k = num / 2;
-	int i = low;
+	int i = lo;
 
 	if (num > 1)
 	{
-		for (i = low; i < low + k; i++)
-			compAndSwap(array, i, i + k, dir, size);
-		bitonicMerge(array, low, k, dir, size);
-	        bitonicMerge(array, low + k, k, dir, size);
+		for (i = lo; i < lo + k; i++)
+			check_swap(array, i, i + k, dir, size);
+		bitonic_merge(array, lo, k, dir, size);
+		bitonic_merge(array, lo + k, k, dir, size);
 	}
 }
-void bitonicSort(int *array, int low, int num, int dir, size_t size) 
+void bitonic_sort_algorithm(int *array, int lo, int num, int dir, size_t size)
 {
 	if (num > 1)
 	{
@@ -43,9 +53,9 @@ void bitonicSort(int *array, int low, int num, int dir, size_t size)
 		else
 			printf("Merging [%i/%i] (DOWN):\n", num, (int)size);
 		print_array(array, num);
-		bitonicSort(array, low, k, 1, size);
-		bitonicSort(array, low + k, k, 0, size);
-		bitonicMerge(array, low, num, dir, size);
+		bitonic_sort_algorithm(array, lo, k, 1, size);
+		bitonic_sort_algorithm(array, lo + k, k, 0, size);
+		bitonic_merge(array, lo, num, dir, size);
 		if (dir == 1)
 		{
 			printf("Result [%i/%i] (UP):\n", num, (int)size);
@@ -58,8 +68,9 @@ void bitonicSort(int *array, int low, int num, int dir, size_t size)
 void bitonic_sort(int *array, size_t size)
 {
 	int up = 1;
+	int lo = 0;
 
-	bitonicSort(array, 0, size, up, size); 
+	bitonic_sort_algorithm(array, lo, size, up, size);
 }
 /**
  * swap - swap function.
