@@ -19,7 +19,7 @@ void check_swap(int *array, int i, int j, int dir, size_t size)
 	}
 }
 /**
- * bitonic_merge - hoare partition algorithm.
+ * bitonic_merge - recursively sorts a bitonic sequence
  * @array: array of integers
  * @size: size of the array
  * @lo: index position lo
@@ -40,6 +40,15 @@ void bitonic_merge(int *array, int lo, int num, int dir, size_t size)
 		bitonic_merge(array, lo + k, k, dir, size);
 	}
 }
+/**
+ * bitonic_sort algorithm - produces a bitonic sequence by recursively sorting
+ * @array: array of integers
+ * @size: size of the array
+ * @lo: index position lo
+ * @num: num of elements to be sorted
+ * @dir: direction = 1 if ascending, 0 if descending
+ * Return: Nothing.
+ */
 void bitonic_sort_algorithm(int *array, int lo, int num, int dir, size_t size)
 {
 	if (num > 1)
@@ -65,6 +74,13 @@ void bitonic_sort_algorithm(int *array, int lo, int num, int dir, size_t size)
 		print_array(array, num);
 	}
 }
+
+/**
+ * bitonic_sort - sort the entire array
+ * @array: array of integers
+ * @size: size of the array
+ * Return: Nothing.
+ */
 void bitonic_sort(int *array, size_t size)
 {
 	int up = 1;
