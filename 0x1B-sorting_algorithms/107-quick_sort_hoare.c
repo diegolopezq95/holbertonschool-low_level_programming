@@ -60,12 +60,10 @@ void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size)
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	size_t lo, hi;
+	size_t lo = 0, hi = size - 1;
 
 	if (!array || size < 2)
 		return;
-	hi = size - 1;
-	lo = 0;
 	quick_sort_easy_hoare(array, lo, hi, size);
 }
 
