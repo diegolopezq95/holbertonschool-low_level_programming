@@ -43,13 +43,17 @@ void swap_right_to_left(listint_t **list, listint_t *tmp);
 void merge(int *array, int *left, int *right, size_t size);
 void merge_sort(int *array, size_t size);
 
-int hoare_part(int *array, int lo, int hi, size_t size);
-void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size);
-void quick_sort_hoare(int *array, size_t size);
-
 void heap_sort(int *array, size_t size);
 void heapify(int *array, size_t size);
 void sift_down(int *array, int start, int end, size_t size);
 
+void check_swap(int *array, int i, int j, int dir, size_t size);
+void bitonic_merge(int *array, int lo, int num, int dir, size_t size);
+void bitonic_sort_algorithm(int *array, int lo, int num, int dir, size_t size);
+void bitonic_sort(int *array, size_t size);
+
+int hoare_part(int *array, int lo, int hi, size_t size);
+void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size);
+void quick_sort_hoare(int *array, size_t size);
 
 #endif
