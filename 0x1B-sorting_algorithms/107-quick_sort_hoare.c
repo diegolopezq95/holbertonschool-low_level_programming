@@ -10,28 +10,27 @@
  */
 int hoare_part(int *array, int lo, int hi, size_t size)
 {
-	int i, j;
-	size_t pivot;
+	int pivot, p;
 
-	i = lo - 1;
-	j = hi + 1;
-	pivot = array[lo];
+	p = lo + (hi - lo) / 2;
+	pivot = array[p];
 	while (1)
 	{
-		do {
-			i = i + 1;
-		} while ((size_t)array[i] < pivot);
-		do {
-			j = j - 1;
-		} while ((size_t)array[j] > pivot && j != 0);
-		if (i >= j)
+		while (array[lo] < pivot)
+			lo = lo + 1;
+		while (array[hi] > pivot)
+			hi = hi - 1;
+	        if (lo >= hi)
 		{
-			return (j);
+			return (hi);
 		}
-		swap(&array[i], &array[j]);
-		print_array((const int *)array, size);
+		swap(&array[lo], &array[hi]);
+		print_array(array, size);
+		lo = lo + 1;
+		hi = hi - 1;
 	}
 }
+
 
 /**
  * quick_sort_easy_hoare - recurtion algorithm.
@@ -45,12 +44,11 @@ void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size)
 {
 	int pi;
 
-	if (lo < hi)
-	{
-		pi = hoare_part(array, lo, hi, size);
-		quick_sort_easy_hoare(array, lo, pi, size);
-		quick_sort_easy_hoare(array, pi + 1, hi, size);
-	}
+	if (lo >= hi)
+		return;
+	pi = hoare_part(array, lo, hi, size);
+	quick_sort_easy_hoare(array, lo, pi, size);
+	quick_sort_easy_hoare(array, pi + 1, hi, size);
 }
 
 /**
@@ -63,12 +61,11 @@ void quick_sort_hoare(int *array, size_t size)
 {
 	size_t lo, hi;
 
-	if (size > 1)
-	{
-		hi = size - 1;
-		lo = 0;
-		quick_sort_easy_hoare(array, lo, hi, size);
-	}
+	if (!array || size < 2)
+		return;
+	hi = size - 1;
+	lo = 0;
+	quick_sort_easy_hoare(array, lo, hi, size);
 }
 
 /**
