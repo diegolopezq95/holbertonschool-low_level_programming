@@ -57,8 +57,8 @@ void bitonic_merge(int *array, int lo, int num, int dir, size_t size);
 void bitonic_sort_algorithm(int *array, int lo, int num, int dir, size_t size);
 void bitonic_sort(int *array, size_t size);
 
-int hoare_part(int *array, int lo, int hi, int size);
-void quick_sort_easy_hoare(int *array, int lo, int hi, int size);
+int hoare_part(int *array, int lo, int hi, size_t size);
+void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
 #endif
