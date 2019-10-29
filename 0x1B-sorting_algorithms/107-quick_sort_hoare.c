@@ -10,24 +10,21 @@
  */
 int hoare_part(int *array, int lo, int hi, size_t size)
 {
-	int pivot, p;
+	int pivot;
 
-	p = lo + (hi - lo) / 2;
-	pivot = array[p];
+	pivot = array[lo];
 	while (1)
 	{
-		while (array[lo] < pivot)
-			lo = lo + 1;
-		while (array[hi] > pivot)
-			hi = hi - 1;
-	        if (lo >= hi)
+		while (array[i] < pivot)
+			i = i + 1;
+		while (array[j] > pivot)
+			j = j - 1;
+	        if (i >= j)
 		{
-			return (hi);
+			return (j);
 		}
-		swap(&array[lo], &array[hi]);
+		swap(&array[i], &array[j]);
 		print_array(array, size);
-		lo = lo + 1;
-		hi = hi - 1;
 	}
 }
 
