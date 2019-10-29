@@ -8,9 +8,10 @@
  * @lo: first value
  * Return: integer.
  */
-int hoare_part(int *array, int lo, int hi, size_t size)
+int hoare_part(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	int pivot, i, j;
+	int pivot;
+	ssize_t i, j;
 
 	i = lo - 1;
 	j = hi + 1;
@@ -44,9 +45,9 @@ int hoare_part(int *array, int lo, int hi, size_t size)
  * @lo: first value
  * Return: Nothing.
  */
-void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size)
+void quick_sort_easy_hoare(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	int pi;
+	ssize_t pi;
 
 	if (lo < hi)
 	{
@@ -64,8 +65,8 @@ void quick_sort_easy_hoare(int *array, int lo, int hi, size_t size)
  */
 void quick_sort_hoare(int *array, size_t size)
 {
-	int lo = 0;
-	int hi = size - 1;
+	ssize_t lo = 0;
+	ssize_t hi = size - 1;
 
 	if (array == NULL || size < 2)
 		return;
