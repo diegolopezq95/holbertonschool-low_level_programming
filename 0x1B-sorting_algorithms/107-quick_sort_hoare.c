@@ -10,16 +10,20 @@
  */
 int hoare_part(int *array, int lo, int hi, size_t size)
 {
-	int pivot;
+	int pivot, i, j;
 
+	i = lo - 1;
+	j = hi + 1;
 	pivot = array[lo];
 	while (1)
 	{
-		while (array[i] < pivot)
+		do {
 			i = i + 1;
-		while (array[j] > pivot)
+		} while (array[i] < pivot);
+		do {
 			j = j - 1;
-	        if (i >= j)
+		} while (array[j] > pivot);
+		if (i >= j)
 		{
 			return (j);
 		}
