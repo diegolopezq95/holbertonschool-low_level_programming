@@ -3,7 +3,6 @@
 /**
  * binary_tree_height - measures the height of a binary tree
  * @tree: pointer to the root node of the tree to traverse
- * @func: pointer to a function to call for each node
  * Return: Nothing
  */
 size_t binary_tree_height(const binary_tree_t *tree)
@@ -14,11 +13,11 @@ size_t binary_tree_height(const binary_tree_t *tree)
 	{
 		return (0);
 	}
-	else 
+	else
 	{
 		cont = binary_tree_height(tree->left);
 		cont2 = binary_tree_height(tree->right);
-        	if (cont >= cont2)
+		if (cont >= cont2)
 		{
 			return (cont + 1);
 		}
