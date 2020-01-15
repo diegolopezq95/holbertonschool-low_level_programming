@@ -49,9 +49,13 @@ int binary_search_recursive(int *array, size_t lo, size_t hi, int value)
 		{
 			return (binary_search_recursive(array, lo, i - 1, value));
 		}
-		else
+		else if (array[i] == value)
 		{
-			return (i);
+			hi = i;
+			if (array[lo] == array[hi])
+				return (lo);
+			else
+				return (binary_search_recursive(array, lo, hi, value));
 		}
 	}
 	return (-1);
