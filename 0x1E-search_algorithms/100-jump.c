@@ -32,10 +32,11 @@ int _min(size_t jmp, size_t size)
  * Return: first index where value is located
  */
 int jump_search(int *array, size_t size, int value)
-{
-	size_t jmp = sqrt(size), prev = 0, i = 0, j = 0, m = 0, n = 0, w = 0;
+{ size_t jmp = sqrt(size), prev = 0, i = 0, j = 0, m = 0, n = 0, w = 0;
 
 	m = jmp;
+	if (array == NULL)
+		return (-1);
 	while (_min(jmp, size) - 1 < value)
 	{ printf("Value checked array[%lu] = [%lu]\n", prev, prev);
 		i = size - 1, w = prev, prev = jmp, jmp += sqrt(size);
@@ -47,8 +48,7 @@ int jump_search(int *array, size_t size, int value)
 			return (-1);
 		}
 		if ((int)prev == value)
-		{
-			printf("Value found between indexes [%lu] and [%d]\n", prev - m, value);
+		{ printf("Value found between indexes [%lu] and [%d]\n", prev - m, value);
 			for (n = prev - m; n < prev; n++)
 				printf("Value checked array[%lu] = [%lu]\n", n, n);
 		}
