@@ -24,7 +24,8 @@ int interpolation_search(int *array, size_t size, int value)
 	}
 	while ((array[hi] != array[lo]))
 	{
-		mid_d = lo + (((double)(hi - lo) / (array[hi] - array[lo])) * (value - array[lo]));
+		mid_d = lo + (((double)(hi - lo) /
+			       (array[hi] - array[lo])) * (value - array[lo]));
 		mid = (size_t)mid_d;
 		if (mid >= size || mid_d < 0)
 		{
